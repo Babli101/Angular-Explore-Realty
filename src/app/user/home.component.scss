@@ -1,0 +1,240 @@
+.hero-section {
+  height: 70vh;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  h1,
+  p {
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  }
+}
+
+.card-section{
+  background: none;
+}
+.card-section {
+  .feature-icon {
+    font-size: 2.5rem;
+    color: #004b4e;
+  }
+
+  .property-card {
+    background: #fff;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      transform: translateY(-5px);
+    }
+  }
+}
+
+// search contanier 
+
+.property-search {
+  padding: 3rem 1rem;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  margin-top: 2rem;
+
+  h2 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+
+  form {
+    .filters {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      align-items: center;
+
+      select,
+      input[type='number'] {
+        width: 100%;
+        padding: 0.6rem 0.75rem;
+        font-size: 1rem;
+        border-radius: 6px;
+        border: 1px solid #ced4da;
+        background-color: white;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          border-color: #003b3e;
+          outline: none;
+        }
+      }
+
+      button {
+        padding: 0.6rem 1rem;
+        background-color: #004b4e;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #003b3e;
+        }
+      }
+    }
+  }
+
+  // .property-listings {
+  //   margin-top: 2rem;
+  //   display: grid;
+  //   gap: 1rem;
+  // }
+
+  .property-card {
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+}
+.property-listings {
+  .property-card {
+    background: #fff;
+    box-shadow: 0 0 6px rgb(0 0 0 / 0.1);
+    border-radius: 6px;
+  }
+}
+
+// properties
+.card-img-top {
+  height: 150px; /* or any fixed value */
+  object-fit: cover;
+}
+.project-card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.my-btn {
+  background-color: #004b4e;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.my-btn:hover {
+  background-color: #003b3e; /* Slightly darker for hover effect */
+  color: #fff;
+}
+
+
+// testimonial
+.testimonial-section {
+  background-color: #f5f3f0;
+
+  .section-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #004b4e;
+    letter-spacing: 1px;
+  }
+
+  .section-subtitle {
+    color: #7a7a7a;
+    font-size: 1rem;
+    font-style: italic;
+  }
+
+  .testimonial-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #eaeaea;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .client-type {
+      color: #004b4e;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .icon-box {
+      font-size: 2.8rem;
+      color: #c1975b; // Gold-like color for luxury
+    }
+
+    .testimonial-text {
+      font-size: 0.95rem;
+      color: #444;
+      font-style: italic;
+    }
+
+    .btn {
+      font-weight: 500;
+      border: 1px solid #004b4e;
+      color: #004b4e;
+
+      &:hover {
+        background-color: #004b4e;
+        color: #fff;
+      }
+    }
+  }
+}
+
+// Featured property Agents
+
+.agent-card {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  .card-image {
+    height: 240px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .overlay-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h4 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #000;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1.2rem;
+    }
+
+    .btn {
+      font-size: 0.8rem;
+    }
+    .btn:hover {
+      background-color: #004b4e;
+    }
+  }
+}
+

@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row position-absolute top-50 start-50 translate-middle">
+    <h1 class="project">Add Project</h1>
+    <form (ngSubmit)="onAddProject()">
+      <input type="text"
+             class="form-control mb-2"
+             [(ngModel)]="projectName"
+             name="projectName"
+             placeholder="Project Name" required />
+
+      <input type="text"
+             class="form-control mb-2"
+             [(ngModel)]="price"
+             name="price"
+             placeholder="Price" required />
+
+      <input type="text"
+             class="form-control mb-2"
+             [(ngModel)]="location"
+             name="location"
+             placeholder="Location" required />
+
+      <!-- ✅ File input -->
+      <input type="file"
+             class="form-control mb-2"
+             (change)="onFileSelected($event)"
+             name="image" accept="image/*" required />
+
+      <button type="submit" class="btn btn-primary mt-2">Add Project</button>
+    </form>
+  </div>
+</div>

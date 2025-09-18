@@ -1,0 +1,55 @@
+.hero-section {
+  height: 70vh;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  h1,
+  p {
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  }
+}
+
+.card-section{
+  background: none;
+}
+.card-section {
+  .feature-icon {
+    font-size: 2.5rem;
+    color: #004b4e;
+  }
+
+  .property-card {
+    background: #fff;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      transform: translateY(-5px);
+    }
+  }
+}
+
+/* Change the active tab background and text color */
+.nav-pills .nav-link.active {
+  background-color: #004b4e !important; /* your custom background */
+  color: #ffffff !important;           /* text color */
+}
+
+/* Optional: change the non-active tabs text color */
+.nav-pills .nav-link {
+  color: #004b4e;  /* default text color for inactive tabs */
+}
+
+/* Optional: change hover effect */
+.nav-pills .nav-link:hover {
+  background-color: #00373a; /* slightly darker shade on hover */
+  color: #ffffff;
+}
