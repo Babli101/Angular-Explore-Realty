@@ -7,7 +7,7 @@ import { UserContactListComponent } from './admin/user-contactlist.component';
 import { AddProjectComponent } from './admin/add-project.component';
 import { importProvidersFrom } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withFetch } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 
@@ -36,6 +36,9 @@ export const appConfig = {
   providers: [
     provideRouter(routes),
     importProvidersFrom(FormsModule, ReactiveFormsModule),
-    provideHttpClient(withInterceptorsFromDi())
+    provideHttpClient(
+      withInterceptorsFromDi(),
+      withFetch() // ✅ Enable fetch API for SSR
+    )
   ]
 };

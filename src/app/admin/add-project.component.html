@@ -1,32 +1,27 @@
-<div class="container">
-  <div class="row position-absolute top-50 start-50 translate-middle">
-    <h1 class="project">Add Project</h1>
-    <form (ngSubmit)="onAddProject()">
-      <input type="text"
-             class="form-control mb-2"
-             [(ngModel)]="projectName"
-             name="projectName"
-             placeholder="Project Name" required />
+<div class="container mt-5">
+  <h2>Add Project</h2>
+  <form (ngSubmit)="onAddProject()">
+    <input type="text" class="form-control mb-2" [(ngModel)]="projectName" name="projectName" placeholder="Project Name" required>
+    <input type="text" class="form-control mb-2" [(ngModel)]="price" name="price" placeholder="Price" required>
 
-      <input type="text"
-             class="form-control mb-2"
-             [(ngModel)]="price"
-             name="price"
-             placeholder="Price" required />
+    <!-- Project Type Dropdown -->
+    <select class="form-select mb-2" [(ngModel)]="projectType" name="projectType" required>
+      <option value="" disabled selected>Select Project Type</option>
+      <option *ngFor="let type of projectTypes" [value]="type">{{ type }}</option>
+    </select>
 
-      <input type="text"
-             class="form-control mb-2"
-             [(ngModel)]="location"
-             name="location"
-             placeholder="Location" required />
+    <!-- Category Dropdown -->
+    <select class="form-select mb-2" [(ngModel)]="category" name="category" required>
+      <option value="" disabled selected>Select Category</option>
+      <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+    </select>
 
-      <!-- ✅ File input -->
-      <input type="file"
-             class="form-control mb-2"
-             (change)="onFileSelected($event)"
-             name="image" accept="image/*" required />
+    <!-- Image input -->
+    <input type="file" class="form-control mb-2" (change)="onImageSelected($event)" accept="image/*" required>
 
-      <button type="submit" class="btn btn-primary mt-2">Add Project</button>
-    </form>
-  </div>
+    <!-- HTML input -->
+    <input type="file" class="form-control mb-2" (change)="onHtmlSelected($event)" accept=".html" required>
+
+    <button type="submit" class="btn btn-primary mt-2">Add Project</button>
+  </form>
 </div>

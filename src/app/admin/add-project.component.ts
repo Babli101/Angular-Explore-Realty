@@ -11,39 +11,43 @@ import { SubscribeService } from '../subscribe.service';
   styleUrls: ['./add-project.component.scss']
 })
 export class AddProjectComponent {
-  projectName: string = '';
-  price: string = '';
-  location: string = '';
-   imageFile!: File;  
+  projectName = '';
+  price = '';
+  projectType = '';
+  category = '';
+  imageFile!: File;
+  htmlFile!: File;
 
+   // ✅ Add these arrays for dropdowns
+  projectTypes = ['Residential', 'Commercial'];
+  categories = ['All', 'Newly Launched', 'Trending', 'Upcoming'];
+  
   constructor(private subscribeService: SubscribeService) {}
 
-  // ✅ file select handler
-  onFileSelected(event: any) {
-    this.imageFile = event.target.files[0];
-  }
+  onImageSelected(event: any) { this.imageFile = event.target.files[0]; }
+  onHtmlSelected(event: any) { this.htmlFile = event.target.files[0]; }
+
   onAddProject() {
     this.subscribeService.addProject(
       this.projectName,
       this.price,
-      this.location,
-      this.imageFile 
+      this.projectType,
+      this.category,
+      this.imageFile,
+      this.htmlFile
     ).subscribe({
-      next: (res: any) => {
+      next: (res) => {
         if (res.success) {
           alert('✅ Project added!');
           this.projectName = '';
           this.price = '';
-          this.location = '';
+          this.projectType = '';
+          this.category = '';
           this.imageFile = undefined as any;
-        } else {
-          alert('❌ Something went wrong');
-        }
+          this.htmlFile = undefined as any;
+        } else alert('❌ Something went wrong');
       },
-      error: (err) => {
-        console.error(err);
-        alert('❌ Server error');
-      }
+      error: (err) => { console.error(err); alert('❌ Server error'); }
     });
   }
 }

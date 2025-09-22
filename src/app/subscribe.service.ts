@@ -9,7 +9,7 @@ export class SubscribeService {
 
     private subscribeUrl = 'http://localhost:3000/api/subscribe';
   private contactUrl = 'http://localhost:3000/api/contact';
-  private projectUrl = 'http://localhost:3000/api/projects';
+  private apiUrl = 'http://localhost:3000/api/projects';
 
   constructor(private http: HttpClient) {}
 
@@ -24,18 +24,27 @@ export class SubscribeService {
   }
 
   // 🏗 For adding a project
-  addProject(projectName: string, price: string, location: string, imageFile: File): Observable<any> {
+  addProject(
+    projectName: string,
+    price: string,
+    projectType: string,
+    category: string,
+    imageFile: File,
+    htmlFile: File
+  ): Observable<any> {
     const formData = new FormData();
     formData.append('projectName', projectName);
     formData.append('price', price);
-    formData.append('location', location);
+    formData.append('projectType', projectType);
+    formData.append('category', category);
     formData.append('image', imageFile);
+    formData.append('htmlFile', htmlFile);
 
-    return this.http.post(`${this.projectUrl}/add`, formData);
+    return this.http.post(this.apiUrl, formData);
   }
 
-  // 📂 For getting all projects
+  // Optional: get all projects
   getProjects(): Observable<any> {
-    return this.http.get(this.projectUrl);
+    return this.http.get(this.apiUrl);
   }
 }

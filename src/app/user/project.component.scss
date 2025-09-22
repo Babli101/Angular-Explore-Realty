@@ -37,6 +37,28 @@
   }
 }
 
+.project-card {
+  margin-bottom: 20px;
+  .card-img-top {
+    border-radius: 5px;
+    height: 200px;
+    object-fit: cover;
+  }
+  .card-title {
+    font-weight: 600;
+  }
+  .price {
+    font-weight: 500;
+    color: #333;
+  }
+  .my-btn {
+    background-color: #4b3b4f;
+    color: #fff;
+    border-radius: 5px;
+  }
+}
+
+
 /* Change the active tab background and text color */
 .nav-pills .nav-link.active {
   background-color: #004b4e !important; /* your custom background */

@@ -1,13 +1,13 @@
 // admin-layout.component.ts
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { RouterOutlet} from '@angular/router';
 import { AdminNavbarComponent } from './admin-navbar.component'; 
 import { SideNavbarComponent } from './side-navbar.component';
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, AdminNavbarComponent,SideNavbarComponent],
+  imports: [RouterOutlet,AdminNavbarComponent,SideNavbarComponent],
   template: `
     <div class="admin-wrapper d-flex">
   <!-- Sidebar -->
