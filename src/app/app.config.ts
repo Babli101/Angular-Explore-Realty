@@ -10,6 +10,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withInterceptorsFromDi, withFetch } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
+import {  SingleProjectComponent } from './user/single-project';
+import { SingleComponent } from './admin/single';
+import { GetProject } from './admin/get-project';
 
 const routes: Routes = [
   {
@@ -19,7 +22,9 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'page', component: PageComponent },
-      { path: 'project', component: ProjectComponent }
+      { path: 'project', component: ProjectComponent },
+      { path: 'single-project',component: SingleProjectComponent}
+      // { path: '**', redirectTo: '' }
     ]
   },
   {
@@ -27,7 +32,9 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       { path: 'user-contactlist', component: UserContactListComponent },
-      { path: 'add-project', component: AddProjectComponent }
+      { path: 'add-project', component: AddProjectComponent },
+      { path: 'get-project', component: GetProject },
+      { path: 'single', component: SingleComponent}
     ]
   }
 ];

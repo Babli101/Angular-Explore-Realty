@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #004b4e;
+  background-color: #0c1c30;
   padding: 10px 20px;
   color: white;
   position:fixed;
@@ -16,7 +16,7 @@
 .logo {
   height: 70px;
   width: auto;
-  border-radius: 50%;
+  // border-radius: 50%;
   margin-left: 50px;
 }
 
@@ -53,7 +53,7 @@
     position: absolute;
     top: 70px;
     right: 0;
-    background-color: #004b4e;
+    background-color: #0c1827;
     flex-direction: column;
     width: 100%;
     display: none;

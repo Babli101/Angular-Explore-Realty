@@ -1,0 +1,24 @@
+<div class="row" *ngIf="!loading">
+  <div class="col-md-4 col-sm-6 mb-4" *ngFor="let project of projects">
+    <div class="card h-100 shadow-sm border-0">
+      <div style="height: 200px; overflow: hidden;">
+        <img
+          [src]="getImage(project)"
+          class="card-img-top w-100 h-100"
+          [alt]="project.name"
+          style="object-fit: cover;"
+        />
+      </div>
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title text-primary fw-semibold">{{ project.name }}</h5>
+        <p class="card-text text-muted mb-2">Price: ₹{{ getPrice(project) }}</p>
+        <div class="mt-auto">
+          <a [routerLink]="['/single', project._id]" class="btn btn-sm btn-primary w-100">Explore</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p *ngIf="!loading && projects.length === 0">No projects found.</p>
+<p *ngIf="loading">Loading projects...</p>
